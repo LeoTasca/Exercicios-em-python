@@ -1,0 +1,8 @@
+Bibliotecas utilizadas nas questões da prova:
+
+- psycopg2: é o adaptador de banco de dados PostgreSQL mais popular para a linguagem de programação Python. 
+            Suas principais características são a implementação completa da especificação Python DB API 2.0 e a segurança de thread 
+            (vários threads podem compartilhar a mesma conexão). Ele foi projetado para aplicativos altamente multi-threaded que criam 
+            e destroem muitos cursores e fazem um grande número de INSERTs ou UPDATEs simultâneos.
+
+- pymongo: essa biblioteca permite a interação com o banco de dados MongoDB por meio de Python; é um driver Python nativo para MongoDB.

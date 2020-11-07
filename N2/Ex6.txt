@@ -1,0 +1,13 @@
+Explique o que é pip: 
+
+O Python possui um conjunto de pacotes, classes e funções em sua biblioteca padrão bastante amplo. 
+Ainda assim, é comum precisarmos de bibliotecas mais especificas, como por exemplo a biblioteca Pymongo, ou o Django, Selenium entre outras.
+
+Para trabalharmos com bibliotecas de terceiros temos 2 opções. A primeira é ir até o site ou repositório do desenvolvedor, 
+fazer o download e em seguida instalar em nosso ambiente de trabalho. A segunda forma é utilizar um gerenciador de pacotes.
+
+Junto ao site do Python existe um repositório de códigos com pacotes construídos por terceiros que podemos utilizar instalar 
+e utilizar em nossas aplicações. Este repositório é chamado de Python Package Index (pip).
+
+Atualmente, toda a instalação do Python instala um utilitário de nome pip. O termo pip é um acrônimo de Índice de Pacotes Python. 
+Essa é uma forma de acessarmos o repositório de código oficial através da linha de comando e somos capazes de instalar, atualizar e remover pacotes.
