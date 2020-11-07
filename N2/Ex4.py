@@ -84,7 +84,7 @@ def consultar():
         print(e)
 
 main()
-cadastrar
+cadastrar()
 editar()
 remover()
 consultar()
