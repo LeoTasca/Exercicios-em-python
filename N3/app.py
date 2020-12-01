@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from N3.aluno import Aluno
+from aluno import Aluno
 
 #indicando qua a aplicaçao vai ser flask
 app = Flask(__name__)
@@ -12,7 +12,7 @@ def contextoApp():
     return "Bem Vindo ao CRUD Aluno"
 
 #post para cadastrar
-@app.route(f"/aluno/save", methods=['POST'])
+@app.route(f"/alunos/cadastrar", methods=['POST'])
 def cadastrarAluno():
     nome = request.args.get('nome')
     matricula = request.args.get('matricula')
@@ -23,23 +23,24 @@ def cadastrarAluno():
     return
 
 #post para consultar
-@app.route("/alunos", methods=['GET'])
+@app.route("/alunos/consultar", methods=['GET'])
 def consultarAluno():
     alunos = aluno.consultar()
     return jsonify(alunos)
 
 #post para editar
-@app.route(f"/aluno/update", methods=['PUT'])
+@app.route(f"/alunos/editar", methods=['PUT'])
 def editarAluno():
+    nome = request.args.get('nome')
     matricula = request.args.get('matricula')
     try:
-        return aluno.editar(matricula)
+        return aluno.editar(nome, matricula)
     except Exception as e:
         return str(e)
     return
 
 #post para remover
-@app.route(f"/aluno/delete", methods=['DELETE'])
+@app.route(f"/alunos/remover", methods=['DELETE'])
 def removerAluno():
     matricula = request.args.get('matricula')
     try:

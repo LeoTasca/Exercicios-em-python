@@ -1,5 +1,5 @@
 import psycopg2
-from N3.conexao import Conexao
+from conexao import Conexao
 
 class Aluno():
 
@@ -8,7 +8,7 @@ class Aluno():
             conexao = Conexao().conexaoDatabase()
             cursor = conexao.cursor()
             #cadastrar os registros na tabela
-            cadastrar = f"Inserir into aluno (nome, matricula) values ('{nome}', '{matricula}');"
+            cadastrar = f"INSERT INTO aluno (nome, matricula) VALUES ('{nome}', '{matricula}');"
             cursor.execute(cadastrar)
             #comitar os registros no database
             conexao.commit()
@@ -45,14 +45,14 @@ class Aluno():
                 conexao.close()
                 print("A conexão com PostgreSQL foi encerrada\n")
 
-    def editar(self, matricula):
+    def editar(self, nome, matricula):
         try:
             conexao = Conexao().conexaoDatabase()
             cursor = conexao.cursor()
-            editar = f"UPDATE aluno WHERE matricula='{matricula}"
+            editar = f"UPDATE aluno SET matricula='{matricula}' WHERE nome='{nome}';"
             cursor.execute(editar)
             conexao.commit()
-            return f"O aluno com a matricula={matricula} teve seus dados atualizados"
+            return f"O aluno={nome} teve seus dados atualizados"
 
         except (Exception, psycopg2.Error) as error:
             print("\nFalha ao atualizar o registro\n", error)
@@ -66,7 +66,7 @@ class Aluno():
         try:
             conexao = Conexao().conexaoDatabase()
             cursor = conexao.cursor()
-            remover = f"DELETE from aluno WHERE matricula='{matricula}';"
+            remover = f"DELETE FROM aluno WHERE matricula='{matricula}';"
             cursor.execute(remover)
             conexao.commit()
             return f"O aluno com a matricula={matricula} foi removido"
