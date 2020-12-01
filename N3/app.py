@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from aluno import Aluno
+from N3.aluno import Aluno
 
 #indicando qua a aplicaçao vai ser flask
 app = Flask(__name__)

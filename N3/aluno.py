@@ -1,5 +1,5 @@
 import psycopg2
-from conexao import Conexao
+from N3.conexao import Conexao
 
 class Aluno():
 
