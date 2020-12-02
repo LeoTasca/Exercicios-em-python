@@ -22,13 +22,13 @@ def cadastrarAluno():
         return str(e)
     return
 
-#post para consultar
+#get para consultar
 @app.route("/alunos/consultar", methods=['GET'])
 def consultarAluno():
     alunos = aluno.consultar()
     return jsonify(alunos)
 
-#post para editar
+#put para editar
 @app.route(f"/alunos/editar", methods=['PUT'])
 def editarAluno():
     nome = request.args.get('nome')
@@ -39,7 +39,7 @@ def editarAluno():
         return str(e)
     return
 
-#post para remover
+#delete para remover
 @app.route(f"/alunos/remover", methods=['DELETE'])
 def removerAluno():
     matricula = request.args.get('matricula')
