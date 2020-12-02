@@ -12,7 +12,7 @@ class Aluno():
             cursor.execute(cadastrar)
             #comitar os registros no database
             conexao.commit()
-            return f"Aluno {nome}({matricula}) foi cadastrado com sucesso no banco de dados"
+            return f"Aluno {nome} e {matricula} foi cadastrado com sucesso no banco de dados"
         #exceção para se ocorrer um erro ao cadastrar os registros na tabela
         except (Exception, psycopg2.DatabaseError) as error:
             print("\nFalha ao cadastrar o registro\n", error)
@@ -52,7 +52,7 @@ class Aluno():
             editar = f"UPDATE aluno SET matricula='{matricula}' WHERE nome='{nome}';"
             cursor.execute(editar)
             conexao.commit()
-            return f"O aluno={nome} teve seus dados atualizados"
+            return f"O aluno {nome} teve seus dados atualizados"
 
         except (Exception, psycopg2.Error) as error:
             print("\nFalha ao atualizar o registro\n", error)
@@ -69,7 +69,7 @@ class Aluno():
             remover = f"DELETE FROM aluno WHERE matricula='{matricula}';"
             cursor.execute(remover)
             conexao.commit()
-            return f"O aluno com a matricula={matricula} foi removido"
+            return f"O aluno com a matricula {matricula} foi removido"
 
         except (Exception, psycopg2.Error) as error:
             print("\nFalha ao remover o registro\n", error)
