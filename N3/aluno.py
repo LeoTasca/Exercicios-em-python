@@ -12,7 +12,7 @@ class Aluno():
             cursor.execute(cadastrar)
             #comitar os registros no database
             conexao.commit()
-            return f"Aluno {nome} e {matricula} foi cadastrado com sucesso no banco de dados"
+            return f"Aluno {nome} e com a matricula {matricula} foi cadastrado com sucesso no banco de dados"
         #exceção para se ocorrer um erro ao cadastrar os registros na tabela
         except (Exception, psycopg2.DatabaseError) as error:
             print("\nFalha ao cadastrar o registro\n", error)
